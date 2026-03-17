@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminal Rooms</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar panel">
+      <div class="brand">terminal rooms</div>
+      <div class="muted">ephemeral chat for fast work conversations</div>
+      <div class="section-title">create room</div>
+      <div class="input-group">
+        <label for="createName">room name</label>
+        <input id="createName" maxlength="30" placeholder="ex. ops, design-review" />
+      </div>
+      <div class="input-group">
+        <label for="createNickname">your nickname</label>
+        <input id="createNickname" maxlength="20" placeholder="ex. neo" />
+      </div>
+      <button id="createBtn">+ create room</button>
+      <div id="createStatus" class="status muted"></div>
+
+      <div class="section-title">my rooms</div>
+      <div id="roomList" class="room-list"></div>
+    </aside>
+
+    <main class="main panel">
+      <div id="welcomeView" class="view active">
+        <div class="terminal-line">&gt; ready</div>
+        <h1>Terminal-style temporary chat rooms</h1>
+        <p class="muted">Create a room, share the link, and chat without signup. Rooms expire in 24 hours, or immediately when everyone leaves.</p>
+      </div>
+
+      <div id="joinView" class="view">
+        <div class="terminal-line">&gt; access room</div>
+        <h2 id="joinRoomName">unknown room</h2>
+        <div class="input-row">
+          <input id="joinNickname" maxlength="20" placeholder="nickname" />
+          <button id="joinBtn">join</button>
+        </div>
+        <div id="joinStatus" class="status muted"></div>
+      </div>
+
+      <div id="chatView" class="view">
+        <div class="chat-header">
+          <div>
+            <div class="terminal-line" id="chatRoomName">&gt; room</div>
+            <div id="chatMeta" class="muted"></div>
+          </div>
+          <div class="actions">
+            <button id="copyBtn">copy link</button>
+            <button id="leaveBtn" class="danger">leave</button>
+          </div>
+        </div>
+
+        <div id="messages" class="messages"></div>
+
+        <form id="messageForm" class="message-form">
+          <span class="prompt">&gt;</span>
+          <input id="messageInput" maxlength="500" autocomplete="off" placeholder="type message and hit enter" />
+          <button type="submit">send</button>
+        </form>
+        <div id="chatStatus" class="status muted"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: terminal-rooms
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 10000
