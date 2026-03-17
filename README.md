@@ -33,3 +33,4 @@ http://localhost:3000
 - 서버 메모리 저장 방식이라 서버 재시작 시 데이터가 사라집니다.
 - 운영 배포용으로는 PostgreSQL/Prisma와 별도 실시간 서버 도입이 필요합니다.
 - 브라우저 기반 clientId이므로 다른 기기와 목록이 동기화되지 않습니다.
+<img width="1163" height="707" alt="image" src="https://github.com/user-attachments/assets/e5bc7ef9-6266-4b28-b928-443536c50c75" />
